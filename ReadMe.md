@@ -10,7 +10,7 @@
 
 
 
-**Limitations and Areas for Improvement:**
+**Some Limitations and Areas for Improvement of the tests:**
 1. Test Coverage: The current tests do not cover all potential cases.
 
 For Projects:
