@@ -9,7 +9,7 @@ CHROME_DRIVER_PATH = os.environ["CHROME_DRIVER_PATH"]
 
 class TestBugBug(unittest.TestCase):
 
-    # The setup that runs before the tests are run: set up the Selenium webdriver
+    # The setup that runs before the tests are run: set up the Selenium webdriver, login and add a new project
     def setUp(self):
         service = Service(executable_path=CHROME_DRIVER_PATH)
         driver = webdriver.Chrome(service=service)
@@ -18,6 +18,8 @@ class TestBugBug(unittest.TestCase):
         self.bug.add_new_project("Example New Project")
 
 
+    # Test for login and adding a new project: list out the most recent project, and check if it has the correct suite
+    # name.
     def test_login_and_create_project(self):
         self.assertEqual("Example New Project", self.bug.list_newest_project())
 
@@ -95,6 +97,12 @@ class TestBugBug(unittest.TestCase):
         self.bug.delete_suite("new suite")
         self.assertEqual(["new suite 2", "All tests"], self.bug.list_suites())
 
+    # Test for suite management: update and list
+    # Ensure there are only the initial suite in the project, then add 2 tests and 1 suites. Next, update the suite
+    # including its name, its setting for "Auto add new tests", its setting for "Auto-retry failed cloud tests",
+    # and the list of tests that will be selected for the test suite. Finally, list the suite and see if the new suite
+    # name is updated correctly.
+    # limitation: didn't check if rest of the settings are updated correctly.
     def test_update_suite(self):
         self.assertEqual(1, len(self.bug.list_suites()))
         self.bug.add_new_test("test1", "Mobile")

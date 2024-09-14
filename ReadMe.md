@@ -1,8 +1,9 @@
 **Instructions for Running Test Cases:**
 1. Prerequisites: Ensure that Python, Selenium WebDriver, and Selenium ChromeDriver are installed on your system.
 2. Clone the Repository: Clone the repository and open the project in PyCharm.
-3. Install Dependencies: In PyCharm, install the necessary dependencies. For any unresolved imports (highlighted in red), click on the lightbulb icon that appears to resolve them automatically. 
-4. Set Environment Variables: Set the following environment variables in the run configuration:
+3. Install Dependencies: In PyCharm, install the necessary dependencies. For any unresolved imports (highlighted in red), click on the lightbulb icon that appears to resolve them automatically.
+4. Add a run configuration - select Python 
+5. Set Environment Variables: Set the following environment variables in the run configuration:
 - CHROME_DRIVER_PATH: Path to ChromeDriver on your machine. 
 - BUGBUG_EMAIL and BUGBUG_PASSWORD: Credentials for accessing relevant services.
 5. Configure the Run Settings: In the run configuration, set the "Script" field to the file path of test/test.py. 
@@ -10,7 +11,7 @@
 
 
 
-**Limitations and Areas for Improvement:**
+**Some Limitations and Areas for Improvement of the tests:**
 1. Test Coverage: The current tests do not cover all potential cases.
 
 For Projects:
@@ -34,6 +35,6 @@ For Create Suites:
 For List Suites:
 - Currently, only suite names are listed in tests. The tests should also verify suite details, such as "auto add new tests" settings and test order.
 
-2. Code Readability and Maintenance:
+_2. Code Readability and Maintenance:
 - Many functions currently use time.sleep(), which can result in slower test execution and is a bad practice. Using wait.until() would reduce execution time and improve reliability.
 - The reason time.sleep() remains in the code is that removing it has introduced some bugs, and I have not yet identified and fixed all of them.
