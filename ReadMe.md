@@ -1,8 +1,9 @@
 **Instructions for Running Test Cases:**
 1. Prerequisites: Ensure that Python, Selenium WebDriver, and Selenium ChromeDriver are installed on your system.
 2. Clone the Repository: Clone the repository and open the project in PyCharm.
-3. Install Dependencies: In PyCharm, install the necessary dependencies. For any unresolved imports (highlighted in red), click on the lightbulb icon that appears to resolve them automatically. 
-4. Set Environment Variables: Set the following environment variables in the run configuration:
+3. Install Dependencies: In PyCharm, install the necessary dependencies. For any unresolved imports (highlighted in red), click on the lightbulb icon that appears to resolve them automatically.
+4. Add a run configuration - select Python 
+5. Set Environment Variables: Set the following environment variables in the run configuration:
 - CHROME_DRIVER_PATH: Path to ChromeDriver on your machine. 
 - BUGBUG_EMAIL and BUGBUG_PASSWORD: Credentials for accessing relevant services.
 5. Configure the Run Settings: In the run configuration, set the "Script" field to the file path of test/test.py. 
